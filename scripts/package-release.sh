@@ -2,8 +2,25 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-bash scripts/build-app.sh
+case "${1:-}" in
+    "") bash scripts/build-app.sh ;;
+    --notarized) ;; # Package the existing stapled app without rebuilding it.
+    *) printf 'Usage: bash scripts/package-release.sh [--notarized]\n' >&2; exit 1 ;;
+esac
 APP="dist/Window Snapper.app"
+verify_notarization() {
+    local signature
+    signature=$(codesign -dv --verbose=2 "$1" 2>&1)
+    if [[ "$signature" != *"Authority=Developer ID Application:"* ]]; then
+        printf 'A Developer ID Application signature is required.\n' >&2
+        return 1
+    fi
+    xcrun stapler validate "$1"
+    spctl --assess --type execute --verbose=2 "$1"
+}
+if [[ "${1:-}" == "--notarized" ]]; then
+    verify_notarization "$APP"
+fi
 VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Contents/Info.plist")
 ARCHS=$(lipo -archs "$APP/Contents/MacOS/WindowSnapper")
 case "$ARCHS" in
@@ -26,6 +43,9 @@ test -x "$VERIFY_DIR/Window Snapper.app/Contents/MacOS/WindowSnapper"
 cmp LICENSE "$VERIFY_DIR/Window Snapper.app/Contents/Resources/LICENSE"
 cmp DISCLAIMER.md "$VERIFY_DIR/Window Snapper.app/Contents/Resources/DISCLAIMER.md"
 cmp SECURITY.md "$VERIFY_DIR/Window Snapper.app/Contents/Resources/SECURITY.md"
+if [[ "${1:-}" == "--notarized" ]]; then
+    verify_notarization "$VERIFY_DIR/Window Snapper.app"
+fi
 
 ARCHIVE_NAME=$(basename "$ARCHIVE")
 (cd dist && shasum -a 256 "$ARCHIVE_NAME" > "$ARCHIVE_NAME.sha256")

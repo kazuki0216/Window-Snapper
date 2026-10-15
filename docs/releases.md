@@ -28,4 +28,4 @@ GitHub adds source archives automatically; those are different from the app ZIP 
 
 ## Workplace distribution
 
-For a verified distribution, use an approved Developer ID identity, Apple notarization, and release validation. See [signing and workplace security](../SECURITY.md#workplace-distribution). The current beta is ad hoc signed and not notarized. Publishing a GitHub release does not change that.
+For a verified distribution, follow the [Developer ID signing and notarization guide](notarization.md). It covers the one-time certificate and Keychain setup plus `bash scripts/notarize-release.sh`. See also [signing and workplace security](../SECURITY.md#workplace-distribution). The current beta is ad hoc signed and not notarized. Publishing a GitHub release does not change that.
