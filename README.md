@@ -4,7 +4,7 @@
   <p><strong>A shortcut. A snap. Back to work.</strong></p>
   <p>A small native macOS menu bar app for putting windows where you want them.</p>
   <p><strong>Swift</strong> · <strong>Apple frameworks only</strong> · <strong>No third-party dependencies</strong></p>
-  <p><a href="#get-started">Get started</a> · <a href="#shortcuts">Shortcuts</a> · <a href="SECURITY.md">Security</a></p>
+  <p><a href="#get-started">Get started</a> · <a href="#shortcuts">Shortcuts</a> · <a href="SECURITY.md">Security</a> · <a href="LICENSE">MIT License</a></p>
 </div>
 
 ---
@@ -18,6 +18,8 @@
 Snapping responds directly to keyboard events, with no animation timers or continuous polling. Actual speed depends on the app being resized; latency has not been benchmarked.
 
 ## Get started
+
+> **A voluntary personal project, shared free of charge.** Use and modify it at your own risk, subject to applicable law. Provided as is, without warranties, under the [MIT License](LICENSE). Read the [disclaimer](DISCLAIMER.md) before relying on it.
 
 **Already have `Window Snapper.app`?** Move it to Applications, open it, and grant Accessibility permission. You do not need Swift, Xcode, Homebrew, or additional libraries to run a compatible prebuilt app.
 
@@ -153,3 +155,9 @@ Implementation notes: [work summary](docs/artifacts/2026-10-15-window-snapper.md
 ## App icon
 
 The charcoal icon with ivory placement guides and a coral snapped pane is drawn with AppKit from [editable Swift artwork](scripts/generate-icon.swift). The build script generates every macOS icon size and packages `Resources/AppIcon.icns`. A full-size preview is saved as [AppIcon.png](Resources/AppIcon.png).
+
+## License and contributions
+
+Copyright © 2026 kazuki0216 and contributors. Released under the [MIT License](LICENSE), which permits use, modification, and redistribution, including commercial reuse, provided the copyright and license notice are preserved. The original author shares this project in good faith and has no intent to earn money from it. There are no warranties or maintenance commitments; see [DISCLAIMER.md](DISCLAIMER.md).
+
+Cloning and modifying your own copy does not grant permission to change this repository. Proposed changes go through pull requests and maintainer review; see [CONTRIBUTING.md](CONTRIBUTING.md). The owner retains administrative control of `main`.
