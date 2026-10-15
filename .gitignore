@@ -1,0 +1,28 @@
+.build/
+dist/
+.DS_Store
+.swiftpm/
+
+# Local credentials, signing material, and machine-specific configuration.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+.netrc
+.aws/
+.ssh/
+.codex/
+.agents/
+
+# Logs and packaged build outputs belong outside source control.
+*.log
+*.dSYM/
+*.zip
+*.dmg
+*.pkg
