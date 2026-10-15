@@ -47,7 +47,7 @@ CODE_SIGN_IDENTITY='Developer ID Application: Your Organization (TEAMID)' bash s
 
 This enables timestamped certificate signing. It can contact Apple's timestamp service and does **not** notarize the result. Default ad hoc signing does not use that timestamp service. Use Apple's [notarization workflow](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution) before sharing a downloadable workplace release, including ticket stapling and Gatekeeper validation. Notarization checks are not a guarantee of absence of vulnerabilities.
 
-No certificate, credentials, notarization submission, published release, or managed deployment has been provisioned by this project. Stable certificate identity can also avoid the repeated privacy identity changes associated with ad hoc rebuilds.
+The downloadable Apple Silicon beta is locally ad hoc signed; it is not a Developer ID signed or notarized workplace release. No certificate, credentials, notarization submission, or managed deployment has been provisioned by this project. Stable certificate identity can also avoid the repeated privacy identity changes associated with ad hoc rebuilds.
 
 ## Inspect a build
 

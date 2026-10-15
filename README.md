@@ -4,7 +4,7 @@
   <p><strong>A shortcut. A snap. Back to work.</strong></p>
   <p>A small native macOS menu bar app for putting windows where you want them.</p>
   <p><strong>Swift</strong> · <strong>Apple frameworks only</strong> · <strong>No third-party dependencies</strong></p>
-  <p><a href="#get-started">Get started</a> · <a href="#shortcuts">Shortcuts</a> · <a href="SECURITY.md">Security</a> · <a href="LICENSE">MIT License</a></p>
+  <p><a href="https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.0-beta.1">Download for Apple Silicon</a> · <a href="#get-started">Install</a> · <a href="#shortcuts">Shortcuts</a> · <a href="SECURITY.md">Security</a> · <a href="LICENSE">MIT License</a></p>
 </div>
 
 ---
@@ -23,12 +23,26 @@ Snapping responds directly to keyboard events, with no animation timers or conti
 
 **Already have `Window Snapper.app`?** Move it to Applications, open it, and grant Accessibility permission. You do not need Swift, Xcode, Homebrew, or additional libraries to run a compatible prebuilt app.
 
+### Download the app — no developer tools needed
+
+1. Open the [v0.1.0 beta release](https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.0-beta.1).
+2. Under **Assets**, download **`Window-Snapper-0.1.0-arm64.zip`**. Choose this file, rather than GitHub's automatically generated **Source code** archives.
+3. Double-click the ZIP in Finder, then drag **Window Snapper.app** into **Applications**.
+4. Quit any older copy and open Window Snapper from Applications. Enable its **Accessibility** permission when prompted.
+5. Focus a normal window and press **Control + Option + Left Arrow**.
+
+**Compatibility:** this beta is for **Apple Silicon Macs (M1 or newer)**, with a declared minimum of macOS 13. Intel and older macOS versions have not been validated and are not supported by this download. No Swift, Xcode, Git, or Homebrew installation is needed to run it.
+
+**Signing:** this is an experimental, locally ad hoc signed build, **not Developer ID signed or Apple-notarized**. macOS may refuse to open it, and managed work Macs may prohibit it. Follow your organization's approved process; do not disable Gatekeeper, SIP, or endpoint protection. See [Apple's guidance on opening apps safely](https://support.apple.com/102445). A seamless verified download requires Developer ID signing and notarization.
+
+Optional integrity check: download the matching `.sha256` file alongside the app ZIP and, in that directory, run `shasum -a 256 -c Window-Snapper-0.1.0-arm64.zip.sha256`. This detects a mismatched download; it is not a publisher identity or safety guarantee.
+
 **Only have this repository?** Follow [Build from source](#build-from-source). GitHub's **Download ZIP** downloads the source, not a ready-to-run app.
 
 | Route | What to download | Available now? |
 | --- | --- | --- |
 | Build from source | This repository and Apple's developer tools with Swift 6+ | Yes |
-| Install a prebuilt app | Only the app ZIP for your Mac's architecture | No published release yet |
+| Install a prebuilt app | Only the app ZIP | [Apple Silicon beta](https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.0-beta.1) |
 | Homebrew | Homebrew and a Window Snapper cask | No cask yet |
 
 ### Simplest way to share a local build
@@ -41,6 +55,8 @@ Snapping responds directly to keyboard events, with no animation timers or conti
 The recipient needs no developer tools. Share a compatible build: the default build targets the builder's architecture, so an Apple Silicon build does not support Intel Macs. The declared minimum is macOS 13; cross-version compatibility has not yet been validated.
 
 Local builds are ad hoc signed, not publisher-authenticated or notarized. For work or wider distribution, use IT-approved Developer ID signing and notarization. A downloaded ZIP may be blocked by macOS or managed policy. Do not disable security protections to install it. See [SECURITY.md](SECURITY.md).
+
+Maintainers can build a ZIP and SHA-256 checksum with `bash scripts/package-release.sh`. The script verifies the extracted app signature, executable permission, and included notices before it reports success. Upload the ZIP and checksum as GitHub Release assets; the generated files stay in ignored `dist/`, outside Git history. Use a new tag for each release and describe its architecture and signing status accurately.
 
 ## Build from source
 
