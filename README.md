@@ -4,7 +4,7 @@
   <p><strong>A shortcut. A snap. Back to work.</strong></p>
   <p>A small native macOS menu bar app for arranging windows.</p>
   <p>Swift · Apple frameworks only · No third-party dependencies</p>
-  <p><a href="https://github.com/kazuki0216/Window-Snapper/releases/download/v0.1.0-beta.1/Window-Snapper-0.1.0-arm64.zip"><strong>Download for Apple Silicon</strong></a> · <a href="https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.0-beta.1">Release notes</a></p>
+  <p><a href="https://github.com/kazuki0216/Window-Snapper/releases/download/v0.1.1-beta.1/Window-Snapper-0.1.1-arm64.zip"><strong>Download for Apple Silicon</strong></a> · <a href="https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.1-beta.1">Release notes</a></p>
 </div>
 
 ---

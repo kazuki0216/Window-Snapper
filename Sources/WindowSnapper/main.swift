@@ -219,7 +219,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApplication.shared.setActivationPolicy(.accessory)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        statusItem.button?.image = NSImage(systemSymbolName: "rectangle.split.2x2", accessibilityDescription: "Window Snapper")
+        statusItem.button?.image = MenuBarIcon.make()
         statusItem.button?.toolTip = "Window Snapper"
         hotKeys.onAction = { [weak self] in self?.snap($0) }
         conflicts = hotKeys.register(preset)

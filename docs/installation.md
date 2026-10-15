@@ -4,8 +4,8 @@
 
 ## Download and install
 
-1. Open the [v0.1.0 beta release](https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.0-beta.1).
-2. Under **Assets**, download **`Window-Snapper-0.1.0-arm64.zip`**. Choose this file, rather than GitHub's automatically generated **Source code** archives.
+1. Open the [v0.1.0 beta release](https://github.com/kazuki0216/Window-Snapper/releases/tag/v0.1.1-beta.1).
+2. Under **Assets**, download **`Window-Snapper-0.1.1-arm64.zip`**. Choose this file, rather than GitHub's automatically generated **Source code** archives.
 3. Double-click the ZIP in Finder, then drag **Window Snapper.app** into **Applications**.
 4. Quit any older copy and open Window Snapper from Applications. Enable its **Accessibility** permission when prompted.
 5. Focus a normal window and press **Control + Option + Left Arrow**.
@@ -14,7 +14,7 @@
 
 **Signing:** this is an experimental, locally ad hoc signed build, **not Developer ID signed or Apple-notarized**. macOS may refuse to open it, and managed work Macs may prohibit it. Follow your organization's approved process; do not disable Gatekeeper, SIP, or endpoint protection. See [Apple's guidance on opening apps safely](https://support.apple.com/102445). A seamless verified download requires Developer ID signing and notarization.
 
-Optional integrity check: download the matching `.sha256` file alongside the app ZIP and, in that directory, run `shasum -a 256 -c Window-Snapper-0.1.0-arm64.zip.sha256`. This detects a mismatched download; it is not a publisher identity or safety guarantee.
+Optional integrity check: download the matching `.sha256` file alongside the app ZIP and, in that directory, run `shasum -a 256 -c Window-Snapper-0.1.1-arm64.zip.sha256`. This detects a mismatched download; it is not a publisher identity or safety guarantee.
 
 ## Permissions and first use
 
